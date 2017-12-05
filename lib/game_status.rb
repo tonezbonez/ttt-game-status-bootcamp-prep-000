@@ -75,7 +75,7 @@ end
 ########################
 
 def winner(board)
-  if win?(board)
+  if won?(board)
     return winner
   end
 end
