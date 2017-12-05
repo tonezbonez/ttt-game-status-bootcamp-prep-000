@@ -33,8 +33,10 @@ def won?(board)
 
           if position_1 == "X" && position_2 == "X" && position_3 == "X"
               return win_combination
+              Winner = "X"
           elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
               return win_combination
+              Winner = "O"
 
           end
         end
@@ -63,10 +65,17 @@ end
 #######################
 
 def over?(board)
-  #returns true if the board has been won, is a draw, or is full.
   if won?(board) || draw?(board) || full?(board)
     return true
   else
     return false
+  end
+end
+
+########################
+
+def winner(board)
+  if win?(board)
+    return winner
   end
 end
