@@ -39,5 +39,5 @@ def won?(board)
 end
 
 def full?(board)
-  board.index.all?{|index| position_taken?(board,index)}
+  board.none?{|index| position_taken?(board,index)}
 end
