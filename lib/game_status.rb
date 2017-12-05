@@ -41,3 +41,17 @@ end
 def full?(board)
   board.none?{|index| index == " "}
 end
+
+def draw?(board)
+  #returns true if the board has not been won and is full
+  #false if the board is not won and the board is not full
+  #false if the board is won.
+
+  if !won?(board) && full?(board)
+    return true
+  elsif !won?(board) && !full?(board)
+    return false
+  elsif won?(board)
+    return false
+  end
+end
