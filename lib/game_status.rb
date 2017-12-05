@@ -33,10 +33,10 @@ def won?(board)
 
           if position_1 == "X" && position_2 == "X" && position_3 == "X"
               return win_combination
-              winner = "X"
+              #winner = "X"
           elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
               return win_combination
-              winner = "O"
+            #  winner = "O"
 
           end
         end
@@ -76,6 +76,6 @@ end
 
 def winner(board)
   if won?(board)
-    return winner
+    return board[win_combination[0]]
   end
 end
