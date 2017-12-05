@@ -75,7 +75,7 @@ end
 ########################
 
 def winner(board)
-  if won?(board)
-    return board[win_combination[0]]
+  if over?(board) && won?(board) 
+    return board[won?[0]]
   end
 end
