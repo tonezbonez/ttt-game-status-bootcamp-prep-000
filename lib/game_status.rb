@@ -1,8 +1,9 @@
-# Helper Method
+
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
+##################
 
 WIN_COMBINATIONS = [
   [0,1,2], #top row
@@ -14,6 +15,9 @@ WIN_COMBINATIONS = [
   [0,4,8], #forward diagonal
   [6,4,2]  #reverse diagonal
 ]
+
+####################
+
 def won?(board)
 
   WIN_COMBINATIONS.each do |win_combination|
@@ -38,20 +42,31 @@ def won?(board)
     return false
 end
 
+#######################
+
 def full?(board)
   board.none?{|index| index == " "}
 end
 
-def draw?(board)
-  #returns true if the board has not been won and is full
-  #false if the board is not won and the board is not full
-  #false if the board is won.
+######################
 
+def draw?(board)
   if !won?(board) && full?(board)
     return true
   elsif !won?(board) && !full?(board)
     return false
   elsif won?(board)
+    return false
+  end
+end
+
+#######################
+
+def over?(board)
+  #returns true if the board has been won, is a draw, or is full.
+  if won?(board) || draw?(board) || full?(board)
+    return true
+  else
     return false
   end
 end
